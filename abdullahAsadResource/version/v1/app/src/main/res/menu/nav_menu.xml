@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/journeys"
+        android:title="Contact US"
+        android:icon="@drawable/ic_contact_us"></item>
+
+    <item
+        android:id="@+id/start"
+        android:icon="@drawable/ic_notifications"
+        android:title="Send notification"></item>
+
+    <item android:id="@+id/btnAdmin"
+        android:title="Admin"
+        android:icon="@drawable/ic_admin"></item>
+
+    <item android:id="@+id/Settings"
+        android:title="About US"
+        android:icon="@drawable/ic_facebook"></item>
+
+    <item android:id="@+id/contact"
+        android:title="-"
+        android:icon="@drawable/ic_facebook"></item>
+</menu>

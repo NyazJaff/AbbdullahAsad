@@ -1,0 +1,3 @@
+keyStore Password: abdullah-alsaad
+key alias: abdullah-alsaad
+key password: abdullah-alsaad
