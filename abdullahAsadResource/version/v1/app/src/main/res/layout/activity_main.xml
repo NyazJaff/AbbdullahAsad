@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".activities.MainActivity">
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/appBackground">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:indeterminate="true"
+        android:max="100"
+        android:visibility="invisible"
+        android:backgroundTint="@color/colorAccent"
+        android:indeterminateTint="#1a09d6"
+        android:layout_marginTop="-7dp"/>
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/header_bg_tran"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgAbdullahAsad"
+        android:layout_width="345dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgBackground"
+        app:srcCompat="@drawable/cropped_header_title" />
+
+    <ImageView
+        android:id="@+id/imgBigLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAbdullahAsad"
+        app:srcCompat="@drawable/logo_300" />
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuestion"
+        app:layout_constraintEnd_toStartOf="@+id/imgBigLogo"
+        app:srcCompat="@drawable/ic_user_shape" />
+
+    <ImageButton
+        android:id="@+id/btnLive"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuestion"
+        app:layout_constraintStart_toEndOf="@+id/imgBigLogo"
+        app:srcCompat="@drawable/ic_live" />
+
+    <ImageButton
+        android:id="@+id/btnQuestion"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="@+id/imgBigLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgBigLogo"
+        app:srcCompat="@drawable/ic_conversation" />
+
+    <ImageButton
+        android:id="@+id/btnSpeach"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="48dp"
+
+        android:layout_marginRight="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/imgBigLogo"
+        app:layout_constraintEnd_toEndOf="@+id/imgBigLogo"
+        app:srcCompat="@drawable/ic_speech" />
+
+    <ImageButton
+        android:id="@+id/btnBookVoice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toEndOf="@+id/imgBigLogo"
+        app:layout_constraintTop_toTopOf="@+id/imgBigLogo"
+        app:srcCompat="@drawable/ic_audiobook" />
+
+    <ImageButton
+        android:id="@+id/btnBook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgBigLogo"
+        app:layout_constraintTop_toTopOf="@+id/imgBigLogo"
+        app:srcCompat="@drawable/ic_open_book"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitStart"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/progressbar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnAdmin"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_admin" />
+
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_logout" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="234dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnQuestion">
+
+        <ImageButton
+            android:id="@+id/btnFacebook"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/ic_facebook"
+            tools:layout_editor_absoluteX="402dp"
+            tools:layout_editor_absoluteY="588dp" />
+
+        <ImageButton
+            android:id="@+id/btnTwitter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/ic_twitter"
+            tools:layout_editor_absoluteX="402dp"
+            tools:layout_editor_absoluteY="588dp" />
+
+        <ImageButton
+            android:id="@+id/btnYoutube"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/ic_youtube"
+            tools:layout_editor_absoluteX="402dp"
+            tools:layout_editor_absoluteY="588dp" />
+
+        <ImageButton
+            android:id="@+id/btnTelegram"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/ic_telegram"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="501dp" />
+
+    </LinearLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
+    </ScrollView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7b7a7a</color>
+    <color name="colorPrimaryDark">#9f3043</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="appBackground" >#dfdedd</color>
+    <color name="appBackgroundLight" >#e7e7e7</color>
+
+    <color name="whiteColorPrimary">#fff9f8</color>
+    <color name="whiteColorSecondary">#192f3b</color>
+    <color name="primaryColor">#d6d5d2</color>
+    <color name="yellowCommentBackground">#ffef7a</color>
+    <color name="blue">#428eff</color>
+
+</resources>

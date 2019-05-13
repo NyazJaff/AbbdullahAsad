@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground"
+    android:focusableInTouchMode="true">
+    
+    <ListView
+        android:id="@+id/questionAndAnswerListView"
+        android:layout_width="310dp"
+        android:layout_height="361dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+    <EditText
+        android:id="@+id/dateSearch"
+        android:layout_width="308dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:inputType="none"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/date" />
+
+</RelativeLayout>
