@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/book"
+        android:icon="@drawable/ic_open_book"
+        android:title="@string/books"></item>
+
+    <item android:id="@+id/lecture"
+        android:title="@string/lectures"
+        android:icon="@drawable/ic_audiobook"></item>
+
+    <item android:id="@+id/speech"
+        android:title="@string/speech"
+        android:icon="@drawable/ic_speech"></item>
+
+    <item android:id="@+id/questionAndAnswer"
+        android:title="@string/questionAndAnswer"
+        android:icon="@drawable/ic_conversation"></item>
+
+    <item android:id="@+id/live"
+        android:title="@string/liveStreamText"
+        android:icon="@drawable/ic_live"></item>
+
+    <item android:id="@+id/about"
+        android:title="@string/biography"
+        android:icon="@drawable/ic_user_shape"></item>
+
+    <!--<item android:id="@+id/contactUS"-->
+        <!--android:title="Contact US"-->
+        <!--android:icon="@drawable/ic_contact_us"></item>-->
+</menu>

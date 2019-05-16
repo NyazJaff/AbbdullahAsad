@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">المحدث عبدالله السعد</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="open">Open </string>
+    <string name="close">Close </string>
+    <string name="books">Books</string>
+    <string name="enableStoragePermission">Failed! Please make sure you have enabled storage permission</string>
+    <string name="thereIsNothingToExport">There is nothing currently to export</string>
+    <string name="databaseFileIsExported">Database is exported to \'Download\' folder</string>
+    <string name="inProgress">In Progress</string>
+    <string name="connectToNetwork">Connect to network to download file!</string>
+    <string name="noConnectionFound">No network connection found!</string>
+    <string name="please_add_your_comment_here">Please add your comment here!</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="comment_saved">Comment is saved!</string>
+    <string name="bookmark_saved">Bookmark is saved!</string>
+    <string name="bookmark_deleted">Bookmark is deleted!</string>
+    <string name="comment">Comment</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="bookItemSmallPrint">Book: %1$s ,Page: %2$o</string>
+    <string name="page">Page: %1$o</string>
+    <string name="shareWithOthers">Share with others!</string>
+    <string name="send">Send</string>
+    <string name="ask_question">Ask Question</string>
+    <string name="question_sent">Question is sent!</string>
+    <string name="book_created">Book is created!</string>
+    <string name="shareLive">%1$s\n \n\n\ %2$s </string>
+    <string name="liveStreamText">Live broadcast of Sheikh Abdullah Al Saad</string>
+    <string name="appLink">www.applink.com</string>
+    <string name="title">Title</string>
+    <string name="youtubeUrl">Link</string>
+    <string name="date">Date</string>
+    <string name="loading">Loading</string>
+    <string name="loadingSettings">Loading Settings</string>
+    <string name="imageUrl">Image Url</string>
+    <string name="downloadUrl">Download Url</string>
+    <string name="bookName">Book Name</string>
+    <string name="error_name_book_required">Name of book is required!</string>
+    <string name="error_pdfURL_required">Pdf URL is required!</string>
+    <string name="error_imageURL_required">Image URL required!</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="password_required">Password Required</string>
+    <string name="email_required">Email Required</string>
+    <string name="failedToLogin">Failed to login, please try again!</string>
+    <string name="login">Login</string>
+    <string name="settingsUpdated">Settings Updated</string>
+    <string name="confirm_delete">Are you sure you want to delete this?</string>
+    <string name="you_cant_undo_this">Cannot undo after deleting</string>
+    <string name="book_deleted_from_backend">Book is now deleted from the backend!</string>
+    <string name="downloadInProgress">download is already in progress!</string>
+    <string name="lecture">Lectures</string>
+    <string name="topic_created">Topic Created</string>
+    <string name="failed_please_try_again">Failed please try again!</string>
+    <string name="name">Name</string>
+    <string name="mp3">MP3</string>
+    <string name="pdf">PDF</string>
+    <string name="connectToNetworkToDownloadFileForFirstTime">Please connect to network to download file for first time</string>
+    <string name="downloading">Downloading..</string>
+
+</resources>

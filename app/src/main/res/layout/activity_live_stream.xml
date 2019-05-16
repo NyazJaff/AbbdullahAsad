@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activities.LiveStream"
+        android:background="@color/appBackground">
+
+
+
+
+
+        <ImageView
+            android:id="@+id/imgBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/header_bg_tran"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/editBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:srcCompat="@drawable/ic_edit"
+            android:scaleType="fitStart"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/questionTableBtn"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="@+id/questionSendBtn"
+            app:layout_constraintTop_toBottomOf="@+id/questionSendBtn"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/questionTableBtn"
+            android:layout_width="42dp"
+            android:layout_height="41dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="96dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="96dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            app:srcCompat="@drawable/ic_table"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/questionSendBtn"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/editBtn"
+            app:layout_constraintTop_toBottomOf="@+id/questionSendBtn"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/shareBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/ic_share"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            app:layout_constraintEnd_toStartOf="@+id/txtTile"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/homeBtn11"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitStart"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/txtTile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            app:srcCompat="@drawable/ic_home"/>
+
+        <ImageButton
+            android:id="@+id/homeBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/txtTile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            app:srcCompat="@drawable/ic_home"/>
+
+        <TextView
+            android:id="@+id/txtTile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="148dp"
+            android:layout_marginLeft="148dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="148dp"
+            android:layout_marginRight="148dp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/askQuestionTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/ask_question"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/question"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_view" />
+
+        <EditText
+            android:id="@+id/question"
+            android:layout_width="278dp"
+            android:layout_height="109dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/live_message_back"
+            android:drawablePadding="2dp"
+            android:gravity="top"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/askQuestionTxt" />
+
+        <Button
+            android:id="@+id/questionSendBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="286dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/question"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/primary_brown"
+            android:text="@string/send"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteColorPrimary"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/question"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="@+id/question"
+            app:layout_constraintTop_toBottomOf="@+id/question" />
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTile" />
+
+        <Switch
+            android:id="@+id/liveSwitch"
+            android:layout_width="46dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="4dp"
+            android:theme="@style/ThemeOverlay.MySwitchCompat"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/questionTableBtn"
+            app:layout_constraintTop_toTopOf="@+id/questionTableBtn" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/liveYoutubeMixlerHolder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/txtTile"
+            app:layout_constraintEnd_toStartOf="@+id/homeBtn"
+            app:layout_constraintStart_toEndOf="@+id/shareBtn"
+            app:layout_constraintTop_toTopOf="@+id/imgBackground"
+            app:layout_constraintVertical_bias="0.8">
+
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/liveGif"
+                android:layout_width="55dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/live"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/mixlrIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                app:srcCompat="@drawable/mixlr"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                app:layout_constraintStart_toEndOf="@+id/liveGif"
+                app:layout_constraintTop_toTopOf="@+id/liveGif" />
+
+            <Button
+                android:id="@+id/mixlrTxt"
+                style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Mixlr"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintStart_toEndOf="@+id/mixlrIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="97dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/yellowCommentBackground"
+                app:layout_constraintEnd_toEndOf="@+id/youtubeTxt"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@+id/youtubeIcon"
+                app:layout_constraintTop_toBottomOf="@+id/youtubeTxt" />
+
+            <ImageButton
+                android:id="@+id/youtubeIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                app:srcCompat="@drawable/youtube"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toStartOf="@+id/youtubeTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/youtubeTxt"
+                style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Youtube"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintEnd_toStartOf="@+id/liveGif"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

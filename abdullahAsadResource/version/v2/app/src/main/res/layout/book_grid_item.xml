@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bubble_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="164dp"
+        android:layout_height="134dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_rect_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="156dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bookImage">
+
+            <ImageButton
+                android:id="@+id/btnDeleteFromFireStore"
+                android:layout_width="32dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="90dp"
+                android:layout_marginRight="90dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitStart"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_delete_record"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="39dp" />
+
+            <ImageButton
+                android:id="@+id/btnDownload"
+                android:layout_width="32dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitStart"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_download_circular"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="39dp" />
+
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="32dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitStart"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_delete"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="39dp" />
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/bookImage"
+            android:layout_width="72dp"
+            android:layout_height="61dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:civ_border_color="#428eff"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bookTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:gravity="center"
+            android:text="التبيان في وجوب الدعوة والبيان"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/bookImage"
+            app:layout_constraintStart_toStartOf="@+id/bookImage"
+            app:layout_constraintTop_toBottomOf="@+id/bookImage" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
