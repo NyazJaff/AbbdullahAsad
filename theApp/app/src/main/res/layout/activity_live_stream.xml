@@ -11,10 +11,6 @@
         tools:context=".activities.LiveStream"
         android:background="@color/appBackground">
 
-
-
-
-
         <ImageView
             android:id="@+id/imgBackground"
             android:layout_width="0dp"
@@ -27,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageButton
+        <android.support.v7.widget.AppCompatImageButton
             android:id="@+id/editBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -46,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/questionSendBtn"
             tools:ignore="ContentDescription" />
 
-        <ImageButton
+        <android.support.v7.widget.AppCompatImageButton
             android:id="@+id/questionTableBtn"
             android:layout_width="42dp"
             android:layout_height="41dp"
@@ -68,7 +64,7 @@
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="ContentDescription" />
 
-        <ImageButton
+        <android.support.v7.widget.AppCompatImageButton
             android:id="@+id/shareBtn"
             android:layout_width="35dp"
             android:layout_height="35dp"
@@ -86,25 +82,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
-        <ImageButton
-            android:id="@+id/homeBtn11"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="fitStart"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/txtTile"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription"
-            app:srcCompat="@drawable/ic_home"/>
-
-        <ImageButton
+        <android.support.v7.widget.AppCompatImageButton
             android:id="@+id/homeBtn"
             android:layout_width="35dp"
             android:layout_height="35dp"
@@ -180,6 +158,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/primary_brown"
+            android:background="@color/primary_brown"
             android:text="@string/send"
             android:textAllCaps="false"
             android:textColor="@color/whiteColorPrimary"
@@ -242,18 +221,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
+            <android.support.v7.widget.AppCompatImageButton
                 android:id="@+id/mixlrIcon"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="12dp"
-                app:srcCompat="@drawable/mixlr"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:background="@drawable/mixlr"
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@+id/liveGif"
-                app:layout_constraintTop_toTopOf="@+id/liveGif" />
+                app:layout_constraintTop_toTopOf="@+id/liveGif"
+                tools:ignore="RtlHardcoded"
+                android:focusable="true" />
 
             <Button
                 android:id="@+id/mixlrTxt"
@@ -284,13 +264,13 @@
                 app:layout_constraintStart_toStartOf="@+id/youtubeIcon"
                 app:layout_constraintTop_toBottomOf="@+id/youtubeTxt" />
 
-            <ImageButton
+            <android.support.v7.widget.AppCompatImageButton
                 android:id="@+id/youtubeIcon"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="12dp"
-                app:srcCompat="@drawable/youtube"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:background="@drawable/youtube"
+
                 app:layout_constraintEnd_toStartOf="@+id/youtubeTxt"
                 app:layout_constraintTop_toTopOf="parent" />
 

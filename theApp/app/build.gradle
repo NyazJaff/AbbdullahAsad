@@ -19,7 +19,7 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
         applicationId "com.abdullah_alsaad"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 8 //11/05/2019
         versionName "1.7"

@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/half_overlay"
-        android:drawable="@drawable/ic_two_left_arrows"
-        android:width="25dp"
-        android:height="25dp"
-        />
-</layer-list>
+<vector android:height="24dp" android:viewportHeight="245.019"
+    android:viewportWidth="245.019" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/primary_brown" android:pathData="M39.597,122.521l84.224,-95.22c6.229,-6.229 6.229,-16.368 0,-22.597c-6.229,-6.229 -16.368,-6.229 -22.597,0L7.179,110.984c-3.178,3.178 -4.672,7.342 -4.64,11.505c-0.032,4.163 1.462,8.359 4.64,11.537l94.044,106.344c6.229,6.198 16.368,6.198 22.597,0c6.229,-6.198 6.229,-16.4 0,-22.597L39.597,122.521z"/>
+    <path android:fillColor="@color/primary_brown" android:pathData="M153.569,122.521l84.16,-95.22c6.325,-6.261 6.325,-16.4 0.064,-22.629c-6.198,-6.229 -16.4,-6.229 -22.597,0l-94.044,106.312c-3.178,3.178 -4.704,7.342 -4.64,11.505c-0.032,4.163 1.462,8.359 4.64,11.537l94.013,106.344c6.261,6.198 16.432,6.198 22.597,0c6.261,-6.198 6.261,-16.4 0,-22.597L153.569,122.521z"/>
+</vector>

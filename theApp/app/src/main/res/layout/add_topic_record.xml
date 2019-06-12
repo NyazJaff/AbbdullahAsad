@@ -59,6 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/primary_brown"
+        android:background="@color/primary_brown"
         android:text="@string/save"
         android:textAllCaps="false"
         android:textColor="@color/whiteColorPrimary"

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AppCompatImageButton;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -60,7 +62,7 @@ public class LiveStream extends YouTubeBaseActivity implements YouTubePlayer.OnI
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private YouTubePlayer youTubePlayer;
     private RadioSetting radioSetting = null;
-    private ImageButton homeBtn, shareBtn, editBtn, questionTableBtn;
+    private AppCompatImageButton homeBtn, shareBtn, editBtn, questionTableBtn;
     private Button questionSendBtn;
     private EditText questionBodyTxt, dateSearch;
     private TextView txtTile, askQuestionTxt;
@@ -83,10 +85,10 @@ public class LiveStream extends YouTubeBaseActivity implements YouTubePlayer.OnI
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         getIntent().setAction("Already created");
-        homeBtn = (ImageButton) findViewById(R.id.homeBtn);
-        shareBtn = (ImageButton) findViewById(R.id.shareBtn);
-        questionTableBtn = (ImageButton) findViewById(R.id.questionTableBtn);
-        editBtn = (ImageButton) findViewById(R.id.editBtn);
+        homeBtn = (AppCompatImageButton) findViewById(R.id.homeBtn);
+        shareBtn = (AppCompatImageButton) findViewById(R.id.shareBtn);
+        questionTableBtn = (AppCompatImageButton) findViewById(R.id.questionTableBtn);
+        editBtn = (AppCompatImageButton) findViewById(R.id.editBtn);
         questionSendBtn = (Button) findViewById(R.id.questionSendBtn);
         questionBodyTxt = (EditText) findViewById(R.id.question);
         txtTile = (TextView) findViewById(R.id.txtTile);

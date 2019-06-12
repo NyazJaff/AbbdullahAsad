@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.content.res.AppCompatResources;
+import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatImageButton;
+import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -213,11 +218,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void LoginUser() {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         View login = getLayoutInflater().inflate(R.layout.admin_login, null);
-        final EditText email = (EditText) login.findViewById(R.id.title);
-        final EditText password = (EditText) login.findViewById(R.id.password);
+        final AppCompatEditText email = (AppCompatEditText) login.findViewById(R.id.title);
+        email.setCompoundDrawablesWithIntrinsicBounds(AppCompatResources.getDrawable(context, R.drawable.ic_email), null, null, null);
+        final AppCompatEditText password = (AppCompatEditText) login.findViewById(R.id.password);
+        password.setCompoundDrawablesWithIntrinsicBounds(AppCompatResources.getDrawable(context, R.drawable.ic_password), null, null, null);
         Button loginBtn = (Button) login.findViewById(R.id.save);
+        loginBtn.setCompoundDrawablesWithIntrinsicBounds(AppCompatResources.getDrawable(context, R.drawable.ic_login), null, null, null);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,9 +15,12 @@ import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.content.res.AppCompatResources;
+import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +40,10 @@ import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -50,7 +57,7 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
     private Toolbar toolbar;
     private Context context;
     private PDFView pdfView;
-    private Button playBtn, button_back_ten_seconds, button_back_five_seconds;
+    private AppCompatImageButton playBtn, button_back_ten_seconds, button_back_five_seconds;
     private SeekBar positionBar;
     private TextView elapsedTimeLabel, remainingTimeLabel, questionAnswerTextView, title;
     private MediaPlayer mp;
@@ -126,9 +133,9 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
     }
 
     private void mp3Setup() {
-        playBtn = (Button) findViewById(R.id.playBtn);
-        button_back_ten_seconds = (Button) findViewById(R.id.button_back_ten_seconds);
-        button_back_five_seconds = (Button) findViewById(R.id.button_back_five_seconds);
+        playBtn = (AppCompatImageButton) findViewById(R.id.playBtn);
+        button_back_ten_seconds = (AppCompatImageButton) findViewById(R.id.button_back_ten_seconds);
+        button_back_five_seconds = (AppCompatImageButton) findViewById(R.id.button_back_five_seconds);
         progressbar = (ProgressBar) findViewById(R.id.progressbar);
 
         playBtn.setOnClickListener(new View.OnClickListener() {
@@ -219,10 +226,10 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
             }
             if (!mp.isPlaying()) {
                 mp.start();
-                playBtn.setBackgroundResource(R.drawable.ic_pause_button);
+                playBtn.setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_pause_button));
             } else {
                 mp.pause();
-                playBtn.setBackgroundResource(R.drawable.ic_play_button);
+                playBtn.setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_play_button));
             }
         } else if (AppUtil.checkNetwork(context) == true) {
             if (FIREBASE_TABLE_NAME.equals("questionAndAnswer")) {
@@ -231,7 +238,15 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
                 }
             } else {
                 if (topic.getMp3URL() != null && !topic.getMp3URL().isEmpty()) {
-                    downloadFile("mp3", topic.getMp3URL());
+                    String var = topic.getMp3URL();
+                    try {
+                        String unicodeUrl = URLEncoder.encode(var, "UTF-8");
+                        unicodeUrl = unicodeUrl.replace("%3A",":");
+                        unicodeUrl = unicodeUrl.replace("%2F","/");
+                        downloadFile("mp3", unicodeUrl);
+                    }  catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } else {
