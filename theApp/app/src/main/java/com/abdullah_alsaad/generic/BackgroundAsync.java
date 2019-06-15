@@ -49,7 +49,7 @@ public class BackgroundAsync extends AsyncTask<String, String, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        System.out.println("Starting download");
+//        System.out.println("Starting download");
     }
 
     @Override
@@ -57,53 +57,53 @@ public class BackgroundAsync extends AsyncTask<String, String, String> {
         int count;
         try {
             String root = Environment.getExternalStorageDirectory().toString();
-            System.out.println("Downloading");
+//            System.out.println("Downloading");
             URL url = new URL(f_url[0]);
 
             URLConnection conection = url.openConnection();
             conection.connect();
             // getting file length
             int lenghtOfFile = conection.getContentLength();
-
-            // input stream to read file - with 8k buffer
-            InputStream input = new BufferedInputStream(url.openStream(), 8192);
-
-            byte data[] = new byte[1124];
-            long total = 0;
-            if(downloadingFile.equals("bookImage")){
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                while ((count = input.read(data)) != -1) {
-                    total += count;
-                    // writing data to file
-                    byteArrayOutputStream.write(data, 0, count);
-                }
-                // flushing output
-                byte[] logoImagedata = byteArrayOutputStream.toByteArray();
-                byteArrayOutputStream.flush();
-                // closing streams
-                byteArrayOutputStream.close();
-                DbPer.insertBookImage(context,id,logoImagedata);
-            }else{
-                // Output stream to write file
-                File folder = new File(Environment.getExternalStorageDirectory() +
-                        File.separator + "abdullahAlSaad/"+format);
-                boolean success = true;
-                if (!folder.exists()) {
-                    success = folder.mkdirs();
-                }
-                if (success) {
-                    OutputStream output = new FileOutputStream(root + "/abdullahAlSaad/"+ format +"/" + id + "." + format);
+            if(lenghtOfFile > 0) {
+                // input stream to read file - with 8k buffer
+                InputStream input = new BufferedInputStream(url.openStream(), 8192);
+                byte data[] = new byte[1124];
+                long total = 0;
+                if(downloadingFile.equals("bookImage")){
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     while ((count = input.read(data)) != -1) {
                         total += count;
                         // writing data to file
-                        output.write(data, 0, count);
+                        byteArrayOutputStream.write(data, 0, count);
                     }
                     // flushing output
-                    output.flush();
+                    byte[] logoImagedata = byteArrayOutputStream.toByteArray();
+                    byteArrayOutputStream.flush();
                     // closing streams
-                    output.close();
-            }
-                input.close();
+                    byteArrayOutputStream.close();
+                    DbPer.insertBookImage(context,id,logoImagedata);
+                }else{
+                    // Output stream to write file
+                    File folder = new File(Environment.getExternalStorageDirectory() +
+                            File.separator + "abdullahAlSaad/"+format);
+                    boolean success = true;
+                    if (!folder.exists()) {
+                        success = folder.mkdirs();
+                    }
+                    if (success) {
+                        OutputStream output = new FileOutputStream(root + "/abdullahAlSaad/"+ format +"/" + id + "." + format);
+                        while ((count = input.read(data)) != -1) {
+                            total += count;
+                            // writing data to file
+                            output.write(data, 0, count);
+                        }
+                        // flushing output
+                        output.flush();
+                        // closing streams
+                        output.close();
+                }
+                    input.close();
+                }
             }
         } catch (Exception e) {
             Log.e("Error: ", e.getMessage());

@@ -97,7 +97,7 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
                         taskRunning = true;
                         progressBar.setVisibility(View.VISIBLE);
                         Download task = new Download(bookItem, holder.btnDelete, holder.btnDownload);
-                        task.execute(bookItem.getPdfURL());
+                        task.execute(AppUtil.encodeURL(bookItem.getPdfURL()));
                     }
                 } else {
                     AppUtil.showToast(context, R.string.downloadInProgress);
@@ -139,12 +139,11 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
                         taskRunning = true;
                         progressBar.setVisibility(View.VISIBLE);
                         Download task = new Download(bookItem, holder.btnDelete, holder.btnDownload);
-                        task.execute(bookItem.getPdfURL());
+                        task.execute(AppUtil.encodeURL(bookItem.getPdfURL()));
                     } else {
                         AppUtil.showToast(context, R.string.connectToNetwork);
                     }
                 }
-                // TODO check if pdf file exits
 //                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 //                fragmentTransaction.replace(R.id.fragment_place_for_summary, pdfViewFragment, "viewPDF").addToBackStack("viewPDF").commit();
             }
@@ -249,7 +248,6 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
 //                        AppUtil.showToast(context, R.string.connectToNetwork);
 //                    }
 //                }
-//                // TODO check if pdf file exits
 ////                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 ////                fragmentTransaction.replace(R.id.fragment_place_for_summary, pdfViewFragment, "viewPDF").addToBackStack("viewPDF").commit();
 //            }
@@ -340,7 +338,7 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            System.out.println("Starting download");
+            //System.out.println("Starting download");
         }
 
         @Override
@@ -349,7 +347,7 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
             try {
                 String root = Environment.getExternalStorageDirectory().toString();
 
-                System.out.println("Downloading");
+                //System.out.println("Downloading");
                 URL url = new URL(f_url[0]);
 
                 URLConnection conection = url.openConnection();
@@ -370,7 +368,6 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
                     OutputStream output = new FileOutputStream(root + "/abdullahAlSaad/pdf/" + bookItem.getId() + ".pdf");
                     byte data[] = new byte[1124];
                     long total = 0;
-
 
                     while ((count = input.read(data)) != -1) {
                         total += count;
@@ -395,7 +392,7 @@ public class BookGridAdapter extends RecyclerView.Adapter<BookGridAdapter.ViewHo
          **/
         @Override
         protected void onPostExecute(String file_url) {
-            System.out.println("Downloaded");
+            //System.out.println("Downloaded");
             progressBar.setVisibility(View.INVISIBLE);
             btnDownload.setVisibility(View.GONE);
             btnDelete.setVisibility(View.VISIBLE);

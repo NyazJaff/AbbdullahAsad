@@ -32,6 +32,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -170,7 +172,7 @@ public class Book extends Fragment {
         bookItemsList.add(bookItem);
         DbPer.saveBookItemToLocalDatabase(context, bookItem);
         BackgroundAsync backgroundAsync = new BackgroundAsync(context,bookItem.getId(), "png","bookImage");
-        backgroundAsync.execute(bookItem.getImageURL());
+        backgroundAsync.execute(AppUtil.encodeURL(bookItem.getImageURL()));
     }
 
     private void displayGridAdapter() {

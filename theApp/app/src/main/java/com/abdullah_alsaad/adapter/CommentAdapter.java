@@ -56,7 +56,7 @@ public class CommentAdapter extends ArrayAdapter<CommentABookmark> {
             commentTxt.setText(currentComment.getComment());
         }else{
             commentTxt.setText(String.format(context.getString(R.string.page),currentComment.getPageNumber()));
-            btnDelete.setBackgroundResource(R.drawable.ic_bookmark);
+            btnDelete.setImageResource(R.drawable.ic_bookmark);
         }
 
         btnDelete.setOnClickListener(new View.OnClickListener() {

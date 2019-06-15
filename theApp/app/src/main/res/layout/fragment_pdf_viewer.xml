@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="@+id/linearLayout"
             app:layout_constraintVertical_bias="0.981">
 
-            <ImageButton
+            <android.support.v7.widget.AppCompatImageButton
                 android:id="@+id/btnShare"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -70,7 +70,7 @@
                 android:scaleType="fitStart"
                 app:srcCompat="@drawable/ic_share" />
 
-            <ImageButton
+            <android.support.v7.widget.AppCompatImageButton
                 android:id="@+id/btnBookmarkList"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -80,7 +80,7 @@
                 android:scaleType="fitStart"
                 app:srcCompat="@drawable/ic_view_list" />
 
-            <ImageButton
+            <android.support.v7.widget.AppCompatImageButton
                 android:id="@+id/btnComment"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -101,7 +101,7 @@
                 <!--android:visibility="visible"-->
                 <!--app:srcCompat="@drawable/ic_bookmark_uncheck" />-->
 
-            <ImageButton
+            <android.support.v7.widget.AppCompatImageButton
                 android:id="@+id/btnBookmark"
                 android:layout_width="30dp"
                 android:layout_height="match_parent"

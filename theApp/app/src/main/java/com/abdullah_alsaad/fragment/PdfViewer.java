@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +43,7 @@ public class PdfViewer extends Fragment implements OnPageChangeListener {
     private PDFView pdfView;
     private BookItem bookItem;
     private Dialog alertDialog;
-    private ImageButton btnBookmarkUncheck, btnBookmark, btnComment, btnBookmarkList, btnShare;
+    private AppCompatImageButton btnBookmarkUncheck, btnBookmark, btnComment, btnBookmarkList, btnShare;
     private HashMap<String, Object> mapData = new HashMap<>();
 
     public PdfViewer() {
@@ -77,11 +79,11 @@ public class PdfViewer extends Fragment implements OnPageChangeListener {
                 DbPer.saveBookItemToLocalDatabase(getActivity(), bookItem);
             }
 
-            btnComment = (ImageButton) view.findViewById(R.id.btnComment);
-            btnShare = (ImageButton) view.findViewById(R.id.btnShare);
-            btnBookmark = (ImageButton) view.findViewById(R.id.btnBookmark);
-//            btnBookmarkUncheck = (ImageButton) view.findViewById(R.id.btnBookmarkUncheck);
-            btnBookmarkList = (ImageButton) view.findViewById(R.id.btnBookmarkList);
+            btnComment = (AppCompatImageButton) view.findViewById(R.id.btnComment);
+            btnShare = (AppCompatImageButton) view.findViewById(R.id.btnShare);
+            btnBookmark = (AppCompatImageButton) view.findViewById(R.id.btnBookmark);
+//            btnBookmarkUncheck = (AppCompatImageButton) view.findViewById(R.id.btnBookmarkUncheck);
+            btnBookmarkList = (AppCompatImageButton) view.findViewById(R.id.btnBookmarkList);
 
             btnBookmarkList.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -146,14 +148,14 @@ public class PdfViewer extends Fragment implements OnPageChangeListener {
                 CommentABookmark bookmark = new CommentABookmark(pdfView.getCurrentPage(), bookItem);
                 if (DbPer.saveCommentABookmarkToLocalDatabase(getActivity(), bookmark) == true) {
                     AppUtil.showToast(getActivity(), R.string.bookmark_saved);
-                    btnBookmark.setBackgroundResource(R.drawable.ic_bookmark);
+                    btnBookmark.setImageResource(R.drawable.ic_bookmark);
                     ///TODO change bookmark icon
                 }
             } else {
                 DbPer.deleteCommentBookmark(getActivity(), commentABookmark.getId());
                 ///TODO change bookmark icon and delete toast
                 AppUtil.showToast(getActivity(), R.string.bookmark_deleted);
-                btnBookmark.setBackgroundResource(R.drawable.ic_bookmark_uncheck);
+                btnBookmark.setImageResource(R.drawable.ic_bookmark_uncheck);
             }
         }
     }
@@ -283,10 +285,11 @@ public class PdfViewer extends Fragment implements OnPageChangeListener {
 
     @Override
     public void onPageChanged(int page, int pageCount) {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         if (getCurrentPageIfBookmarked() == null) {
-            btnBookmark.setBackgroundResource(R.drawable.ic_bookmark_uncheck);
+            btnBookmark.setImageResource(R.drawable.ic_bookmark_uncheck);
         } else {
-            btnBookmark.setBackgroundResource(R.drawable.ic_bookmark);
+            btnBookmark.setImageResource(R.drawable.ic_bookmark);
         }
     }
 

@@ -239,14 +239,7 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
             } else {
                 if (topic.getMp3URL() != null && !topic.getMp3URL().isEmpty()) {
                     String var = topic.getMp3URL();
-                    try {
-                        String unicodeUrl = URLEncoder.encode(var, "UTF-8");
-                        unicodeUrl = unicodeUrl.replace("%3A",":");
-                        unicodeUrl = unicodeUrl.replace("%2F","/");
-                        downloadFile("mp3", unicodeUrl);
-                    }  catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+                    downloadFile("mp3", var);
                 }
             }
         } else {
@@ -260,7 +253,7 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
             progressbar.setVisibility(View.VISIBLE);
             AppUtil.showToast(context, getString(R.string.downloading));
             BackgroundAsync backgroundAsync = new BackgroundAsync(Integer.valueOf(fileStringId), format, context, progressbar);
-            backgroundAsync.execute(url);
+            backgroundAsync.execute(AppUtil.encodeURL(url));
             downloadInProgress = true;
         } else {
             AppUtil.showToast(context, getString(R.string.downloadInProgress));

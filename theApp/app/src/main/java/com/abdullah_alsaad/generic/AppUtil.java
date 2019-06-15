@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.nio.channels.FileChannel;
 
 public class AppUtil {
@@ -48,6 +51,23 @@ public class AppUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static String encodeURL(String url) {
+        if(url != null){
+            String unicodeUrl = null;
+            try {
+                unicodeUrl = URLDecoder.decode(url, "UTF-8");
+                unicodeUrl = URLEncoder.encode(unicodeUrl, "UTF-8");
+                unicodeUrl = unicodeUrl.replace("%3A",":");
+                unicodeUrl = unicodeUrl.replace("%2F","/");
+                return  unicodeUrl;
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "";
     }
 
     public static void showToast(Context context, String text) {
