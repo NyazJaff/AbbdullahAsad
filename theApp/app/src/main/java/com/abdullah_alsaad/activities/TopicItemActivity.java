@@ -156,10 +156,8 @@ public class TopicItemActivity extends AppCompatActivity implements OnPageChange
             mp = MediaPlayer.create(context, fileUri);
             if (mp != null) {
                 mp.seekTo(0);
+                totalTime = mp.getDuration();
             }
-
-            totalTime = mp.getDuration();
-
             positionBar = (SeekBar) findViewById(R.id.positionBar);
             positionBar.setMax(totalTime);
             positionBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
