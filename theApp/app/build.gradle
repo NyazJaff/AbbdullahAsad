@@ -68,6 +68,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
     implementation 'com.android.support:recyclerview-v7:26.3.1'
+    implementation 'com.github.barteksc:pdfium-android:1.8.2'
 
 }
 
